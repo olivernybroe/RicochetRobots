@@ -1,6 +1,8 @@
 import java.awt.*;
 import java.io.IOException;
-import java.util.*;
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Scanner;
 
 public class Ricochet2 {
 
@@ -8,7 +10,7 @@ public class Ricochet2 {
     public static void main(String[] args) throws Exception {
 
         Board board = new Ricochet2().loadBoard(new Scanner(System.in));
-        Solution solution = new Ricochet2().new Solution(board.board, board.robots, board.goal, board.size);
+        Solution solution = new Ricochet2().new Solution(board.board, board.robots, board.goal);
         System.out.println(solution.computeSolution());
 
     }
@@ -19,9 +21,9 @@ public class Ricochet2 {
         private Board board;
         private boolean[][][] visitedRobots;
 
-        public Solution(char[][] board, Point[] robots, Point goal, int size) {
-            this.board = new Board(board, robots, goal, size);
-            this.visitedRobots = new boolean[robots.length][this.board.size][this.board.size];
+        public Solution(char[][] board, Point[] robots, Point goal) {
+            this.board = new Board(board, robots, goal);
+            this.visitedRobots = new boolean[robots.length][board.length][board.length];
 
         }
 
@@ -33,9 +35,9 @@ public class Ricochet2 {
             while (!q.isEmpty()) {
                 Board tempBoard = q.poll();
 
-                if (tempBoard.isGoal())
+                if (tempBoard.isGoal()) {
                     return tempBoard.moves;
-
+                }
 
                 for (int i = 0; i < tempBoard.robots.length; i++) {
                     Endpoints endpoint = tempBoard.possibleEndpointsForRobot(i);
@@ -65,10 +67,9 @@ public class Ricochet2 {
                         tempBoardDirection.moveRobot(i, Direction.Down);
                         q.add(tempBoardDirection);
                     }
-
                 }
             }
-            return "no solution";
+            throw new Exception("no solution");
         }
 
     }
@@ -106,6 +107,6 @@ public class Ricochet2 {
             System.err.println("Error: No goal found on board");
         }
 
-        return new Board(b, robots, goal, size);
+        return new Board(b, robots, goal);
     }
 }

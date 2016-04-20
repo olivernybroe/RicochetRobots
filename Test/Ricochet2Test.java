@@ -24,7 +24,7 @@ public class Ricochet2Test {
                 "    G       \n" +
                 "       #    \n");
         Board board = new Ricochet2().loadBoard(scanner);
-        Ricochet2.Solution solution = new Ricochet2().new Solution(board.board, board.robots, board.goal, board.size);
+        Ricochet2.Solution solution = new Ricochet2().new Solution(board.board, board.robots, board.goal);
         assertEquals(solution.computeSolution(), "0D\n" +
                         "1D\n" +
                         "0R\n" +
@@ -55,7 +55,7 @@ public class Ricochet2Test {
                 "      #    #  #     \n" +
                 "        # ###2      \n");
         Board board = new Ricochet2().loadBoard(scanner);
-        Ricochet2.Solution solution = new Ricochet2().new Solution(board.board, board.robots, board.goal, board.size);
+        Ricochet2.Solution solution = new Ricochet2().new Solution(board.board, board.robots, board.goal);
         assertEquals(solution.computeSolution(), "0U\n" +
                 "1U\n" +
                 "1R\n" +
@@ -75,7 +75,7 @@ public class Ricochet2Test {
                 "    # #  \n" +
                 "      ## \n");
         Board board = new Ricochet2().loadBoard(scanner);
-        Ricochet2.Solution solution = new Ricochet2().new Solution(board.board, board.robots, board.goal, board.size);
+        Ricochet2.Solution solution = new Ricochet2().new Solution(board.board, board.robots, board.goal);
         assertNotEquals(solution.computeSolution(), "no solution");
     }
     @Test
@@ -128,7 +128,7 @@ public class Ricochet2Test {
                 "                  #    #   #      #          \n" +
                 "        #         G                          \n");
         Board board = new Ricochet2().loadBoard(scanner);
-        Ricochet2.Solution solution = new Ricochet2().new Solution(board.board, board.robots, board.goal, board.size);
+        Ricochet2.Solution solution = new Ricochet2().new Solution(board.board, board.robots, board.goal);
         assertNotEquals(solution.computeSolution(), "no solution");
     }
     @Test
@@ -236,7 +236,7 @@ public class Ricochet2Test {
                 "  #                   #  #    #   #          #                     #          #             #   #   \n" +
                 "  #       #      #                 #                                      #      #         # #      \n");
         Board board = new Ricochet2().loadBoard(scanner);
-        Ricochet2.Solution solution = new Ricochet2().new Solution(board.board, board.robots, board.goal, board.size);
+        Ricochet2.Solution solution = new Ricochet2().new Solution(board.board, board.robots, board.goal);
         assertNotEquals(solution.computeSolution(), "no solution");
     }
     @Test
@@ -281,7 +281,7 @@ public class Ricochet2Test {
                 "#             #     #       # #   # G\n" +
                 "#####################################\n");
         Board board = new Ricochet2().loadBoard(scanner);
-        Ricochet2.Solution solution = new Ricochet2().new Solution(board.board, board.robots, board.goal, board.size);
+        Ricochet2.Solution solution = new Ricochet2().new Solution(board.board, board.robots, board.goal);
         assertNotEquals(solution.computeSolution(), "no solution");
     }
     @Test
@@ -309,7 +309,7 @@ public class Ricochet2Test {
                 "     1          4 # \n" +
                 " #        #         \n");
         Board board = new Ricochet2().loadBoard(scanner);
-        Ricochet2.Solution solution = new Ricochet2().new Solution(board.board, board.robots, board.goal, board.size);
+        Ricochet2.Solution solution = new Ricochet2().new Solution(board.board, board.robots, board.goal);
         assertNotEquals(solution.computeSolution(), "no solution");
     }
     @Test
@@ -358,7 +358,7 @@ public class Ricochet2Test {
                 "     # #     #    # #   ###     # ##   # \n" +
                 "#   ##          ##     #  # # #  # #     \n");
         Board board = new Ricochet2().loadBoard(scanner);
-        Ricochet2.Solution solution = new Ricochet2().new Solution(board.board, board.robots, board.goal, board.size);
+        Ricochet2.Solution solution = new Ricochet2().new Solution(board.board, board.robots, board.goal);
         assertNotEquals(solution.computeSolution(), "no solution");
     }
     @Test
@@ -411,7 +411,7 @@ public class Ricochet2Test {
                 "#  ##      # #  #      #   #0       #   ## # \n" +
                 "     # ###  # #     #        ####    #     ##\n");
         Board board = new Ricochet2().loadBoard(scanner);
-        Ricochet2.Solution solution = new Ricochet2().new Solution(board.board, board.robots, board.goal, board.size);
+        Ricochet2.Solution solution = new Ricochet2().new Solution(board.board, board.robots, board.goal);
         assertNotEquals(solution.computeSolution(), "no solution");
     }
     @Test
@@ -439,7 +439,7 @@ public class Ricochet2Test {
                 "   # 1          ## #\n" +
                 "    #4    #0#    # #\n");
         Board board = new Ricochet2().loadBoard(scanner);
-        Ricochet2.Solution solution = new Ricochet2().new Solution(board.board, board.robots, board.goal, board.size);
+        Ricochet2.Solution solution = new Ricochet2().new Solution(board.board, board.robots, board.goal);
         assertNotEquals(solution.computeSolution(), "no solution");
     }
 }
