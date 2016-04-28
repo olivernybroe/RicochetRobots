@@ -13,22 +13,23 @@ public class Board {
     public String moves = "";
 
 
-    public Board(char[][] board, Point[] robots, Point goal, int size) {
+    public Board(char[][] board, Point[] robots, Point goal) {
         this.board = board;
-        this.size = size;
+        this.size = board.length;
         this.robots = robots;
         this.goal = goal;
     }
 
     public Board(Board tempBoard){
-        this.board = new char[tempBoard.size][tempBoard.size]; // tempBoard.board.length];
-        for (int i = 0; i < tempBoard.size; ++i) {
+        this.board = new char[tempBoard.board.length][]; // tempBoard.board.length];
+        for (int i = 0; i < tempBoard.board.length; ++i) {
             this.board[i] = tempBoard.board[i].clone();
         }
 
         this.robots = new  Point[tempBoard.robots.length];
         this.robots = tempBoard.robots.clone();
-
+        //System.arraycopy( tempBoard.board, 0, board, 0, tempBoard.board.length );
+        //System.arraycopy( tempBoard.robots, 0, robots, 0, tempBoard.robots.length );
         this.size = tempBoard.size;
         this.goal = tempBoard.goal;
         this.moves = tempBoard.moves;

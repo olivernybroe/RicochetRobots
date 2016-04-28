@@ -44,6 +44,7 @@ public class Ricochet2 {
 
                     visitedRobots[i][tempBoard.robots[i].x][tempBoard.robots[i].y] = true;
 
+
                     if (!visitedRobots[i][endpoint.Right.x][endpoint.Right.y]) {
                         Board tempBoardDirection = new Board(tempBoard);
                         tempBoardDirection.moveRobot(i, Direction.Right);
